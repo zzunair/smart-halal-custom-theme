@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="{{ 'cs-announcement-bar-slider.css' | asset_url }}">
+
+<section class="announcement-bar-slider" 
+  style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+  <div class="announcement-bar-slider-container">
+    <div class="announcement-bar-slider">
+      {% for block in section.blocks %}
+        <div class="announcement-bar-slider-item">
+          {% if block.settings.icon != blank %}
+            <div class="announcement-icon">
+              <img src="{{ block.settings.icon | img_url: '20x20' }}" 
+                alt="{{ block.settings.text }}"
+                loading="lazy"
+                width="20"
+                height="20">
+            </div>
+          {% endif %}
+          <span class="announcement-text">{{ block.settings.text }}</span>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="announcement-link">
+              {{ block.settings.link_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  $('.announcement-bar-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: {{ section.settings.autoplay }},
+    // autoplay: false,
+    autoplaySpeed: {{ section.settings.autoplay_speed | times: 1000 }},
+    arrows: {{ section.settings.show_arrows }},
+    dots: {{ section.settings.show_dots }},
+    fade: {{ section.settings.use_fade }},
+    prevArrow: '<button type="button" class="slick-prev">&#8249;</button>',
+    nextArrow: '<button type="button" class="slick-next">&#8250;</button>'
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Cs Announcement Bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "sec",
+      "label": "Change Slides Every",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show Navigation Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show Navigation Dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use_fade",
+      "label": "Use Fade Animation",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Announcement Text",
+          "default": "Announce something here"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Learn More"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cs Announcement Bar Slider"
+    }
+  ]
+}
+{% endschema %}

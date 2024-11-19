@@ -1149,7 +1149,30 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.global.settings.header__border.content"
+        "content": "Drawer Collection"
+      },
+      {
+        "type": "collection",
+        "id": "drawer-collection",
+        "label": "Select Collection"
+      },
+      {
+        "type": "text",
+        "id": "drawer-collection-tagline",
+        "label": "Collection Tagline"
+      },
+      {
+        "type": "header",
+        "content": "Free Shipping Threshold"
+      },
+      {
+        "type": "range",
+        "id": "drawer-free-shipping",
+        "min": 50,
+        "max": 500,
+        "step": 10,
+        "label": "Shipping Threshold",
+        "default": 50,
       },
       {
         "type": "range",
