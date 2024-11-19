@@ -1,0 +1,186 @@
+
+<link rel="stylesheet" href="{{ 'custom-banner.css' | asset_url }}">
+
+<style>
+    {% for block in section.blocks %}
+    @media all and (max-width: 768px){
+        .banner-slide-{{ forloop.index }} {
+            background-image: url({{block.settings.mImage | img_url: 'master'}}) !important;
+        }
+    }
+    {%endfor%}
+</style>
+<section id="main-banner">
+    <div class="banner-wrapper">
+        {% for block in section.blocks %}
+             {% if block.settings.dImage != blank %}
+                <div class="banner-slide banner-slide-{{ forloop.index }}" style="background-image: url({{block.settings.dImage | img_url: 'master'}});">
+                    <div class="custom-container">
+                        <div class="banner-text-wrap">
+                            <div class="banner-text-inner-wrap {% if block.settings.hide_background %}no-background{% endif %} text-{{ block.settings.content_alignment }}">
+                                {% if block.settings.sub-heading != blank %}
+                                    <p class="">{{block.settings.sub-heading}}</p>
+                                {% endif %}
+                                {% if block.settings.heading != blank %}
+                                    <h2 class="section-heading">
+                                      <span>{{block.settings.heading}}</span>
+                                    </h2>
+                                {% endif %}
+                                {% if block.settings.description != blank %}
+                                    <h5>{{ block.settings.description }}</h5>
+                                {% endif %}
+                                {% if block.settings.btn-text != blank %}
+                                    <div class="banner-button-wrap">
+                                        <a href="{{block.settings.btn-link}}" class="global-btn">{{block.settings.btn-text}}</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+
+<script>
+    $('.banner-wrapper').slick({
+        dots: true,
+        infinite: {{section.settings.infinite}},
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // autoplay: {{section.settings.autoplay}},
+        autoplay: false,
+        autoplaySpeed: {{section.settings.slider-speed}},
+        fade: true,
+        pauseOnHover: false,
+        cssEase: 'ease-out',
+    });
+
+</script>
+
+{% schema %}
+{
+  "name": "Cs Hero banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "infinite",
+      "default": false,
+      "label": "Infinte Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "default": true,
+      "label": "Autoplay Slider"
+    },
+    {
+      "type": "range",
+      "id": "slider-speed",
+      "min": 1000,
+      "max": 9000,
+      "step": 1000,
+      "default": 4000,
+      "label": "Slider Speed"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "banner",
+      "limit": 10,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "dImage",
+            "label": "Desktop Slider Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "mImage",
+            "label": "Mobile Slider Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Image banner",
+          "label": "Banner Heading"
+        },
+        {
+            "type": "text",
+            "id": "sub-heading",
+            "default": "Image banner Sub Heading",
+            "label": "Banner SubHeading"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+          },
+         {
+             "type": "text",
+             "id": "btn-text",
+             "label": "Button Text",
+             "default": "Button"
+         },
+        {
+            "type": "url",
+            "id": "btn-url",
+            "label": "Button Link"
+        },
+        {
+            "type": "range",
+            "id": "image_overlay_opacity",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+            "default": 0
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_background",
+          "label": "Hide Background",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cs Hero Banner",
+      "blocks": [
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

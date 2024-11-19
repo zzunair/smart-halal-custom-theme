@@ -1,0 +1,84 @@
+.cs-gallery-wrapper {
+    margin-top: 60px;
+}
+.cs-gallery-wrapper .custom-container {
+    height: 100%; 
+}
+.cs-gallery-wrapper .cards-wrap{
+    display: grid;
+    gap: 20px;
+}
+.cs-gallery-wrapper .cards-wrap.cards-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.cs-gallery-wrapper .cards-wrap.cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.cs-gallery-wrapper .cards-wrap.cards-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.cs-gallery-wrapper .cards-wrap .gallery-card{ 
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cs-gallery-wrapper .cards-wrap .gallery-card:hover .gallery-card-overlay{
+    display: block;
+    border-radius: 18px;
+} 
+.cs-gallery-wrapper .cards-wrap .gallery-card:hover{
+    box-shadow: var(--color-g-text-alpha-30) 0 3.125rem 6.25rem -1rem, var(--color-g-text-alpha-40) 0 1.875rem 2.75rem -1rem;
+    transform: translateY(-10px);
+}
+.cs-gallery-wrapper .cards-wrap .gallery-card .gallery-card-overlay { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(99, 97, 97, 0.5);
+    z-index: 9;
+    display: none;
+}
+.cs-gallery-wrapper .cards-wrap .gallery-card .gallery-card-content { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.cs-gallery-wrapper .cards-wrap .gallery-card .gallery-card-content h2 { 
+    font-size: 42px;
+    color: var(--white);
+}
+.cs-gallery-wrapper .cards-wrap .gallery-card .gallery-card-content p { 
+    color: var(--white);
+}
+@media all and (max-width: 1200px) {
+    .cs-gallery-wrapper .cards-wrap.cards-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media all and (max-width: 991px) {
+    .cs-gallery-wrapper .cards-wrap.cards-3,
+    .cs-gallery-wrapper .cards-wrap.cards-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media all and (max-width: 768px) {
+    .cs-gallery-wrapper .cards-wrap.cards-2,
+    .cs-gallery-wrapper .cards-wrap.cards-3,
+    .cs-gallery-wrapper .cards-wrap.cards-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .cs-gallery-wrapper .cards-wrap .gallery-card { 
+        height: 400px;
+    }
+}

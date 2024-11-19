@@ -26,23 +26,92 @@
         "enable_language_selector": false
       }
     },
-    "header": {
-      "type": "header",
+    "cs_header_bz9gj7": {
+      "type": "cs-header",
+      "blocks": {
+        "collection_ndfdmE": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "collection_HWFWjR": {
+          "type": "collection",
+          "settings": {
+            "collection": "summer"
+          }
+        },
+        "collection_YdRDeD": {
+          "type": "collection",
+          "settings": {
+            "collection": "winter"
+          }
+        },
+        "deal_WB6XYV": {
+          "type": "deal",
+          "settings": {
+            "deal_image": "shopify://shop_images/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+            "deal_text": "Deal of the Day"
+          }
+        },
+        "deal_3GhRLB": {
+          "type": "deal",
+          "settings": {
+            "deal_image": "shopify://shop_images/1_1200x_9ce9ea54-763e-4f26-b899-f61e183db4b9.webp",
+            "deal_text": "Deal of the Day"
+          }
+        },
+        "deal_EzUMgG": {
+          "type": "deal",
+          "settings": {
+            "deal_image": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
+            "deal_text": "Deal of the Day"
+          }
+        },
+        "deal_rFaMPB": {
+          "type": "deal",
+          "settings": {
+            "deal_image": "shopify://shop_images/brooke-lark-zeB2rlxV148-unsplash.jpg",
+            "deal_text": "Deal of the Day"
+          }
+        },
+        "deal_CbaKNb": {
+          "type": "deal",
+          "settings": {
+            "deal_image": "shopify://shop_images/anshu-a--ZT0ngTk6bU-unsplash_4b642162-dfb8-49b6-bb17-799ab862b190.jpg",
+            "deal_text": "Deal of the Day"
+          }
+        }
+      },
+      "block_order": [
+        "collection_ndfdmE",
+        "collection_HWFWjR",
+        "collection_YdRDeD",
+        "deal_WB6XYV",
+        "deal_3GhRLB",
+        "deal_EzUMgG",
+        "deal_rFaMPB",
+        "deal_CbaKNb"
+      ],
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "logo_image": "shopify://shop_images/Smart-halal-logo-transparent-1_copy_f08dadd7-0dab-41c7-a9e3-256d2af84d97_190x_2x-removebg-preview.png",
+        "show_upper_nav": true,
+        "show_departments": true,
+        "departments_text": "Departments",
+        "departments_as_popup": true,
+        "departments_link": "",
+        "show_deals": true,
+        "deals_text": "Today's Deals",
+        "deals_link": "shopify://collections/all",
+        "sale_collection": "winter",
+        "sale_products_limit": 7,
+        "show_sale_menu": true,
+        "show_megamenu_image": true,
+        "megamenu_image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
+        "megamenu_image_link": "/collections",
+        "link_title": "All Collections",
+        "heading": "Save upto 20%",
+        "subHeading": "All Collections"
       }
     }
   },

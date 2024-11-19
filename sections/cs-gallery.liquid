@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="{{ 'cs-gallery.css' | asset_url }}">
+
+<section>
+    <div class="cs-gallery-wrapper">
+        <div class="custom-container">
+            <div class="cards-wrap cards-{{ section.settings.cards_per_row }}">
+                {%- for block in section.blocks -%}
+                    {% if block.settings.g-link != blank %}
+                        <a href="{{ block.settings.g-link }}" class="gallery-card-link">
+                    {% endif %}
+                        <div class="gallery-card" style="background-image: url({{block.settings.g-image | img_url: 'master'}});">
+                            <div class="gallery-card-overlay"></div>
+                            <div class="gallery-card-content">
+                                <div class="heading">
+                                    <h2>{{block.settings.g-heading}}</h2>
+                                </div>
+                                <div class="description">
+                                    <p>{{block.settings.g-description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% if block.settings.g-link != blank %}
+                        </a>
+                    {% endif %}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "cs Gallery",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cards_per_row",
+        "label": "Cards per row",
+        "options": [
+          {
+            "value": "2",
+            "label": "2 Cards"
+          },
+          {
+            "value": "3",
+            "label": "3 Cards"
+          },
+          {
+            "value": "4",
+            "label": "4 Cards"
+          }
+        ],
+        "default": "2"
+      }
+    ],
+    "blocks": [{
+      "type": "Images",
+      "name": "Image",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "g-image",
+          "label": "Gallery Image"
+        },
+        {
+          "type": "text",
+          "id": "g-heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "g-description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "g-link",
+          "label": "Card Link"
+        }
+      ]
+    }],
+    "presets": [
+      {
+        "name": "cs Gallery",
+        "settings": {
+          "cards_per_row": "2"
+        }
+      }
+    ]
+  }
+{% endschema %}

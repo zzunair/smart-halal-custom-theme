@@ -1,0 +1,131 @@
+.video-section-wrapper {
+    height: 100vh;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-section {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.video-section h4 {
+    font-size: 18.515px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.video-thumbnail {
+    width: 233px;
+    position: relative;
+    cursor: pointer;
+    height: 157px;
+    background: #999;
+    border-radius: 12px;
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    border-radius: 50%;
+    background-color: var(--white);
+    height: 40px;
+    width: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.video-heading {
+    font-size: 56.6378px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    text-align: left;
+}
+
+.video-heading h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+    z-index: 1;
+}
+
+.video-heading h2::before {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(90deg, transparent 0, rgba(251, 207, 0, 0.5) 15%, rgba(251, 207, 0, 0.5) 85%, transparent 100%);
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.video-content-wrap {
+    width: 450px;
+}
+
+.video-content-wrap .section-heading span {
+    color: var(--white);
+    font-size: var(--heading-xl);
+}
+
+.video-description p {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--white);
+    overflow-wrap: break-word;
+    line-height: 29.8092px;
+}
+
+.video-btn {
+    padding: 20.2276px 37.2614px;
+    border-radius: 30px;
+}
+
+.video-section-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-section-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-section-overlay>div {
+    width: 60%;
+    height: 60vh;
+}
+
+.video-section-overlay>div>video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media all and (max-width: 992px) {
+    .video-content-wrap {
+        width: unset;
+    }
+}
