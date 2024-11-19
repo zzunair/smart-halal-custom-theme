@@ -1,346 +1,75 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
- {
+{
   "sections": {
-    "cs_banner_XwtmPb": {
-      "type": "cs-banner",
+    "image_banner": {
+      "type": "image-banner",
       "blocks": {
-        "banner_XPqhcH": {
-          "type": "banner",
-          "settings": {
-            "dImage": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
-            "mImage": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
-            "heading": "Image banner 1",
-            "sub-heading": "Image banner Sub Heading",
-            "description": "",
-            "btn-text": "Shop all",
-            "btn-url": "",
-            "image_overlay_opacity": 0
-          }
-        },
-        "banner_nDGRrY": {
-          "type": "banner",
-          "settings": {
-            "dImage": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
-            "mImage": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
-            "heading": "Image banner two",
-            "sub-heading": "Image banner Sub Heading",
-            "description": "",
-            "btn-text": "Shop Now",
-            "btn-url": "",
-            "image_overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "banner_XPqhcH",
-        "banner_nDGRrY"
-      ],
-      "settings": {
-        "infinite": false,
-        "autoplay": true,
-        "slider-speed": 4000
-      }
-    },
-    "featured_qEMCFx": {
-      "type": "Featured",
-      "blocks": {
-        "heading_g6X9C6": {
+        "heading": {
           "type": "heading",
           "settings": {
-            "item-heading": "Fast, Free Shipping",
-            "item-subheading": "On domestic orders over $99"
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
           }
         },
-        "heading_8hytTj": {
-          "type": "heading",
+        "button": {
+          "type": "buttons",
           "settings": {
-            "item-heading": "Top Quality Products",
-            "item-subheading": "Hand-selected, customer approved"
-          }
-        },
-        "heading_MpYgQQ": {
-          "type": "heading",
-          "settings": {
-            "item-heading": "Unbeatable Prices",
-            "item-subheading": "Wholesale pricing for everyone"
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading_g6X9C6",
-        "heading_8hytTj",
-        "heading_MpYgQQ"
-      ],
-      "settings": {}
-    },
-    "cs_gallery_EF7wqr": {
-      "type": "cs-gallery",
-      "blocks": {
-        "images_gQiqDY": {
-          "type": "Images",
-          "settings": {
-            "g-image": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
-            "g-heading": "Gallery Heading 1",
-            "g-description": "Gallery Description 1"
-          }
-        },
-        "images_aGpCWV": {
-          "type": "Images",
-          "settings": {
-            "g-image": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
-            "g-heading": "Gallery Heading 2",
-            "g-description": ""
-          }
-        },
-        "images_PrBxjE": {
-          "type": "Images",
-          "settings": {
-            "g-image": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
-            "g-heading": "Gallery Heading 3",
-            "g-description": ""
-          }
-        },
-        "images_YVRhkx": {
-          "type": "Images",
-          "settings": {
-            "g-image": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
-            "g-heading": "Gallery Heading 3",
-            "g-description": ""
-          }
-        }
-      },
-      "block_order": [
-        "images_gQiqDY",
-        "images_aGpCWV",
-        "images_PrBxjE",
-        "images_YVRhkx"
-      ],
-      "settings": {}
-    },
-    "cs_video_section_mPUDeD": {
-      "type": "Cs-Video-section",
-      "settings": {
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "background_image": "shopify://shop_images/anshu-a--ZT0ngTk6bU-unsplash.jpg",
-        "video_section_title": "",
-        "video_title": "",
-        "video_subtitle": "",
-        "video_description": ""
-      }
-    },
-    "cs_featured_slider_eyK7qR": {
-      "type": "cs-featured-slider",
-      "settings": {
-        "collection": "frontpage"
-      }
-    },
-    "cs_popup_gallery_x7qb4h": {
-      "type": "cs-popup-gallery",
-      "blocks": {
-        "product_kfiVMm": {
-          "type": "Product",
-          "settings": {
-            "product": "black-leather-bag"
-          }
-        },
-        "product_MPrWmT": {
-          "type": "Product",
-          "settings": {
-            "product": "blue-silk-tuxedo"
-          }
-        },
-        "product_gJmray": {
-          "type": "Product",
-          "settings": {
-            "product": "chequered-red-shirt"
-          }
-        },
-        "product_B6NWqy": {
-          "type": "Product",
-          "settings": {
-            "product": "classic-varsity-top"
-          }
-        },
-        "product_ndkaMG": {
-          "type": "Product",
-          "settings": {
-            "product": "dark-denim-top"
-          }
-        },
-        "product_D3pXDz": {
-          "type": "Product",
-          "settings": {
-            "product": "floral-white-top"
-          }
-        },
-        "product_Aef8iP": {
-          "type": "Product",
-          "settings": {
-            "product": "led-high-tops"
-          }
-        },
-        "product_WVyNMc": {
-          "type": "Product",
-          "settings": {
-            "product": "longsleeve-cotton-top"
-          }
-        },
-        "product_kkLdcY": {
-          "type": "Product",
-          "settings": {
-            "product": "navy-sport-jacket"
-          }
-        },
-        "product_mkcMfp": {
-          "type": "Product",
-          "settings": {
-            "product": "ocean-blue-shirt"
-          }
-        },
-        "product_hLtNQU": {
-          "type": "Product",
-          "settings": {
-            "product": "olive-green-jacket"
-          }
-        },
-        "product_Tf8kVG": {
-          "type": "Product",
-          "settings": {
-            "product": "red-sports-tee"
-          }
-        }
-      },
-      "block_order": [
-        "product_kfiVMm",
-        "product_MPrWmT",
-        "product_gJmray",
-        "product_B6NWqy",
-        "product_ndkaMG",
-        "product_D3pXDz",
-        "product_Aef8iP",
-        "product_WVyNMc",
-        "product_kkLdcY",
-        "product_mkcMfp",
-        "product_hLtNQU",
-        "product_Tf8kVG"
-      ],
-      "settings": {}
-    },
-    "cs_blog_section_b4Xn7N": {
-      "type": "cs-blog-section",
-      "settings": {
-        "subheading": "The Journal",
-        "heading": "Our Stories",
-        "blog": "",
-        "posts_limit": 8,
-        "view_all_text": "View All",
-        "view_all_link": "shopify://blogs/news",
-        "slides_to_show": 4,
-        "show_date": true,
-        "show_tags": true,
-        "show_excerpt": true,
-        "excerpt_length": 100
-      }
-    },
-    "cs_homepage_collections_6mXQVG": {
-      "type": "cs-homepage-collections",
-      "blocks": {
-        "collection_QQwhkJ": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "collection_79HWRB": {
-          "type": "collection",
-          "settings": {
-            "collection": "summer"
-          }
-        },
-        "collection_wn8dGC": {
-          "type": "collection",
-          "settings": {
-            "collection": "winter"
-          }
-        },
-        "collection_jqHfma": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage",
-            "custom_image": "shopify://shop_images/woman-in-the-city_925x_21355fac-7e4a-4882-8c82-c006a37805c4.jpg"
-          }
-        },
-        "collection_WR3WY7": {
-          "type": "collection",
-          "settings": {
-            "collection": "winter"
-          }
-        },
-        "collection_fYAHLf": {
-          "type": "collection",
-          "settings": {
-            "collection": "summer",
-            "custom_image": "shopify://shop_images/striped-blouse-fashion_925x_10412834-12bb-4b86-ae5e-6eef4bc596d6.jpg"
-          }
-        },
-        "collection_KHygVj": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        }
-      },
-      "block_order": [
-        "collection_QQwhkJ",
-        "collection_79HWRB",
-        "collection_wn8dGC",
-        "collection_jqHfma",
-        "collection_WR3WY7",
-        "collection_fYAHLf",
-        "collection_KHygVj"
+        "heading",
+        "button"
       ],
       "settings": {
-        "heading": "See What's Hot",
-        "subheading": "Most popular product lines",
-        "button_text": "View All",
-        "button_link": ""
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "image_behavior": "none",
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
-    "cs_single_collection_Hd8nnH": {
-      "type": "cs-single-collection",
+    "featured_collection": {
+      "type": "featured-collection",
       "settings": {
-        "selected_collection": "frontpage",
-        "section_title": "Unique Styles",
-        "section_text": "Impress your guests with place settings that are as beautiful as they are functional.",
-        "button_link": "shopify://collections",
-        "button_text": "Explore More"
-      }
-    },
-    "footer_subscribe_gm7xhm": {
-      "type": "footer-subscribe",
-      "settings": {
-        "subscribe_title": ""
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 44,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "cs_banner_XwtmPb",
-    "featured_qEMCFx",
-    "cs_gallery_EF7wqr",
-    "cs_video_section_mPUDeD",
-    "cs_featured_slider_eyK7qR",
-    "cs_popup_gallery_x7qb4h",
-    "cs_blog_section_b4Xn7N",
-    "cs_homepage_collections_6mXQVG",
-    "cs_single_collection_Hd8nnH",
-    "footer_subscribe_gm7xhm"
+    "image_banner",
+    "featured_collection"
   ]
 }
