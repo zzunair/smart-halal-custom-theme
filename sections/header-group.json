@@ -1,53 +1,77 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "cs_announcement_bar_slider_XyKnmP": {
+      "type": "cs-announcement-bar-slider",
       "blocks": {
-        "announcement-bar-0": {
+        "announcement_RmdhA3": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "icon": "shopify://shop_images/system-solid-64-shopping-bag-hover-shopping-bag-2.svg",
+            "text": "20% off sitewide",
+            "link": "",
+            "link_text": "Learn More"
+          }
+        },
+        "announcement_7pVrY9": {
+          "type": "announcement",
+          "settings": {
+            "text": "Hassle free 90 days return",
+            "link": "",
+            "link_text": "Learn More"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement_RmdhA3",
+        "announcement_7pVrY9"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "background_color": "#778477",
+        "text_color": "#ffffff",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_arrows": false,
+        "show_dots": false,
+        "use_fade": true
       }
     },
-    "header": {
-      "type": "header",
+    "cs_header_bz9gj7": {
+      "type": "cs-header",
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "logo_image": "shopify://shop_images/Smart-halal-logo-transparent-1_copy_f08dadd7-0dab-41c7-a9e3-256d2af84d97_190x_2x-removebg-preview.png",
+        "show_upper_nav": true,
+        "show_departments": true,
+        "departments_text": "Departments",
+        "departments_as_popup": true,
+        "departments_link": "",
+        "show_deals": true,
+        "deals_text": "Today's Deals",
+        "deals_link": "shopify://collections/all",
+        "sale_collection": "winter",
+        "sale_products_limit": 7,
+        "show_sale_menu": true,
+        "show_megamenu_image": true,
+        "megamenu_image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
+        "megamenu_image_link": "/collections",
+        "link_title": "View All Collections",
+        "heading": "Save upto 20%",
+        "subHeading": "All Collections"
       }
     }
   },
   "order": [
-    "announcement-bar",
-    "header"
+    "cs_announcement_bar_slider_XyKnmP",
+    "cs_header_bz9gj7"
   ]
 }

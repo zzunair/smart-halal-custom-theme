@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="{{ 'custom-footer.css' | asset_url }}">
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h2>{{ section.settings.footer_title | split: ' ' | first }}<span>{{ section.settings.footer_title | split: ' ' | last }}</span></h2>
+      <div class="footer__description">
+        {{ section.settings.footer_description }}
+      </div>
+      <p><em>{{ section.settings.demo_text }}</em></p>
+      <div class="social-icons">
+        {% if section.settings.facebook_link != blank %}
+          <a href="{{ section.settings.facebook_link }}" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        {% endif %}
+        {% if section.settings.twitter_link != blank %}
+          <a href="{{ section.settings.twitter_link }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        {% endif %}
+        {% if section.settings.pinterest_link != blank %}
+          <a href="{{ section.settings.pinterest_link }}" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
+        {% endif %}
+        {% if section.settings.instagram_link != blank %}
+          <a href="{{ section.settings.instagram_link }}" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="footer-section shop">
+      <h3>Shop</h3>
+      {% if section.settings.footer_shop_menu != blank %}
+        <ul>
+          {% for link in linklists[section.settings.footer_shop_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="footer-section info">
+      <h3>Information</h3>
+      {% if section.settings.footer_info_menu != blank %}
+        <ul>
+          {% for link in linklists[section.settings.footer_info_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="footer-section newsletter">
+      <h3>{{ section.settings.newsletter_title }}</h3>
+      {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input
+          type="email"
+          name="contact[email]"
+          placeholder="{{ section.settings.newsletter_placeholder }}"
+          required
+        >
+        <button type="submit" class="newsletter-submit">
+          <svg fill="#fff" width="30px" height="30px" viewBox="0 0 24 24" id="right" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color">
+            <path id="primary" d="M21.71,11.29l-7-7a1,1,0,0,0-1.42,1.42L18.59,11H3a1,1,0,0,0,0,2H18.59l-5.3,5.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l7-7A1,1,0,0,0,21.71,11.29Z" style="fill: #fff;"></path>
+          </svg>
+        </button>
+      {%- endform -%}
+      <div class="newsletter-text">
+        {{ section.settings.newsletter_text }}
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "About Section"
+    },
+    {
+      "type": "text",
+      "id": "footer_title",
+      "label": "Footer Title",
+      "default": "CookTime"
+    },
+    {
+      "type": "richtext",
+      "id": "footer_description",
+      "label": "Footer Description",
+      "default": "<p>CookTime has been delivering only the highest quality goods for your home and kitchen for over 35 years. We pride ourselves on fast, friendly service, a wide selection, and unbeatable prices.</p>"
+    },
+    {
+      "type": "text",
+      "id": "demo_text",
+      "label": "Demo Store Text",
+      "default": "This is a demonstration store. No orders will be fulfilled."
+    },
+    {
+      "type": "header",
+      "content": "Social Media Links"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "twitter_link",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "url",
+      "id": "pinterest_link",
+      "label": "Pinterest URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "header",
+      "content": "Menu Settings"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_shop_menu",
+      "label": "Shop Menu",
+      "default": "footer"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_info_menu",
+      "label": "Information Menu",
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "default": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Email Placeholder",
+      "default": "Enter your e-mail"
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_text",
+      "label": "Newsletter Description",
+      "default": "<p>Sign up for our newsletter and be the first to know about coupons and special promotions.</p>"
+    }
+  ]
+}
+{% endschema %}
