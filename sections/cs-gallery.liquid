@@ -1,22 +1,27 @@
-
 <link rel="stylesheet" href="{{ 'cs-gallery.css' | asset_url }}">
 
 <section>
     <div class="cs-gallery-wrapper">
         <div class="custom-container">
-            <div class="cards-wrap">
+            <div class="cards-wrap cards-{{ section.settings.cards_per_row }}">
                 {%- for block in section.blocks -%}
-                    <div class="gallery-card" style="background-image: url({{block.settings.g-image | img_url: 'master'}});">
-                        <div class="gallery-card-overlay"></div>
-                        <div class="gallery-card-content">
-                            <div class="heading">
-                                <h2>{{block.settings.g-heading}}</h2>
-                            </div>
-                            <div class="description">
-                                <p>{{block.settings.g-description}}</p>
+                    {% if block.settings.g-link != blank %}
+                        <a href="{{ block.settings.g-link }}" class="gallery-card-link">
+                    {% endif %}
+                        <div class="gallery-card" style="background-image: url({{block.settings.g-image | img_url: 'master'}});">
+                            <div class="gallery-card-overlay"></div>
+                            <div class="gallery-card-content">
+                                <div class="heading">
+                                    <h2>{{block.settings.g-heading}}</h2>
+                                </div>
+                                <div class="description">
+                                    <p>{{block.settings.g-description}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {% if block.settings.g-link != blank %}
+                        </a>
+                    {% endif %}
                 {%- endfor -%}
             </div>
         </div>
@@ -27,7 +32,26 @@
   {
     "name": "cs Gallery",
     "settings": [
-      
+      {
+        "type": "select",
+        "id": "cards_per_row",
+        "label": "Cards per row",
+        "options": [
+          {
+            "value": "2",
+            "label": "2 Cards"
+          },
+          {
+            "value": "3",
+            "label": "3 Cards"
+          },
+          {
+            "value": "4",
+            "label": "4 Cards"
+          }
+        ],
+        "default": "2"
+      }
     ],
     "blocks": [{
       "type": "Images",
@@ -48,6 +72,11 @@
           "type": "text",
           "id": "g-description",
           "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "g-link",
+          "label": "Card Link"
         }
       ]
     }],
@@ -55,7 +84,7 @@
       {
         "name": "cs Gallery",
         "settings": {
-
+          "cards_per_row": "2"
         }
       }
     ]

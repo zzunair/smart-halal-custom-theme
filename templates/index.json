@@ -19,10 +19,12 @@
             "mImage": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
             "heading": "Image banner 1",
             "sub-heading": "Image banner Sub Heading",
-            "description": "",
+            "description": "hello friends chaye pee lo",
             "btn-text": "Shop all",
             "btn-url": "",
-            "image_overlay_opacity": 0
+            "image_overlay_opacity": 0,
+            "hide_background": false,
+            "content_alignment": "center"
           }
         },
         "banner_nDGRrY": {
@@ -35,7 +37,9 @@
             "description": "",
             "btn-text": "Shop Now",
             "btn-url": "",
-            "image_overlay_opacity": 0
+            "image_overlay_opacity": 0,
+            "hide_background": false,
+            "content_alignment": "center"
           }
         }
       },
@@ -56,21 +60,24 @@
           "type": "heading",
           "settings": {
             "item-heading": "Fast, Free Shipping",
-            "item-subheading": "On domestic orders over $99"
+            "item-subheading": "On domestic orders over $99",
+            "custom_icon": ""
           }
         },
         "heading_8hytTj": {
           "type": "heading",
           "settings": {
             "item-heading": "Top Quality Products",
-            "item-subheading": "Hand-selected, customer approved"
+            "item-subheading": "Hand-selected, customer approved",
+            "custom_icon": ""
           }
         },
         "heading_MpYgQQ": {
           "type": "heading",
           "settings": {
             "item-heading": "Unbeatable Prices",
-            "item-subheading": "Wholesale pricing for everyone"
+            "item-subheading": "Wholesale pricing for everyone",
+            "custom_icon": ""
           }
         }
       },
@@ -79,7 +86,11 @@
         "heading_8hytTj",
         "heading_MpYgQQ"
       ],
-      "settings": {}
+      "settings": {
+        "background_color": "#163340",
+        "text_color": "#ffffff",
+        "icon_color": "#ffd700"
+      }
     },
     "cs_gallery_EF7wqr": {
       "type": "cs-gallery",
@@ -89,7 +100,8 @@
           "settings": {
             "g-image": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
             "g-heading": "Gallery Heading 1",
-            "g-description": "Gallery Description 1"
+            "g-description": "Gallery Description 1",
+            "g-link": "shopify://collections/frontpage"
           }
         },
         "images_aGpCWV": {
@@ -97,7 +109,8 @@
           "settings": {
             "g-image": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
             "g-heading": "Gallery Heading 2",
-            "g-description": ""
+            "g-description": "",
+            "g-link": ""
           }
         },
         "images_PrBxjE": {
@@ -105,7 +118,8 @@
           "settings": {
             "g-image": "shopify://shop_images/mae-mu-ecUVGNZA1TM-unsplash.webp",
             "g-heading": "Gallery Heading 3",
-            "g-description": ""
+            "g-description": "",
+            "g-link": ""
           }
         },
         "images_YVRhkx": {
@@ -113,7 +127,8 @@
           "settings": {
             "g-image": "shopify://shop_images/01_it_Hero03_CW3624_Harvest_2x1_Thematic_m_sgv.jpg",
             "g-heading": "Gallery Heading 3",
-            "g-description": ""
+            "g-description": "",
+            "g-link": ""
           }
         }
       },
@@ -123,7 +138,22 @@
         "images_PrBxjE",
         "images_YVRhkx"
       ],
-      "settings": {}
+      "settings": {
+        "cards_per_row": "2"
+      }
+    },
+    "cs_timer_section_gJhjm4": {
+      "type": "cs-timer-section",
+      "settings": {
+        "start_year": "2025",
+        "start_month": "1",
+        "start_day": "1",
+        "start_time": "00:00",
+        "deal_value": "20",
+        "background_image": "shopify://shop_images/fog-on-dark-waters-edge.jpg",
+        "deal_btn_text": "Get the Deal!",
+        "deal_btn_link": "/"
+      }
     },
     "cs_video_section_mPUDeD": {
       "type": "Cs-Video-section",
@@ -139,7 +169,8 @@
     "cs_featured_slider_eyK7qR": {
       "type": "cs-featured-slider",
       "settings": {
-        "collection": "frontpage"
+        "collection": "frontpage",
+        "numberOfSlides": 4
       }
     },
     "cs_popup_gallery_x7qb4h": {
@@ -335,6 +366,7 @@
     "cs_banner_XwtmPb",
     "featured_qEMCFx",
     "cs_gallery_EF7wqr",
+    "cs_timer_section_gJhjm4",
     "cs_video_section_mPUDeD",
     "cs_featured_slider_eyK7qR",
     "cs_popup_gallery_x7qb4h",

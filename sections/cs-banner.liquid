@@ -17,7 +17,7 @@
                 <div class="banner-slide banner-slide-{{ forloop.index }}" style="background-image: url({{block.settings.dImage | img_url: 'master'}});">
                     <div class="custom-container">
                         <div class="banner-text-wrap">
-                            <div class="banner-text-inner-wrap">
+                            <div class="banner-text-inner-wrap {% if block.settings.hide_background %}no-background{% endif %} text-{{ block.settings.content_alignment }}">
                                 {% if block.settings.sub-heading != blank %}
                                     <p class="">{{block.settings.sub-heading}}</p>
                                 {% endif %}
@@ -51,7 +51,8 @@
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: {{section.settings.autoplay}},
+        // autoplay: {{section.settings.autoplay}},
+        autoplay: false,
         autoplaySpeed: {{section.settings.slider-speed}},
         fade: true,
         pauseOnHover: false,
@@ -141,6 +142,32 @@
             "unit": "%",
             "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
             "default": 0
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_background",
+          "label": "Hide Background",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "Content Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
         }
       ]
     }

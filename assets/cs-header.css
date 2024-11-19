@@ -503,10 +503,11 @@ button {
 
   .dropdown:hover>.dropdown-content {
     cursor: initial;
-    top: 122px;
+    top: 135px;
     opacity: 1;
     pointer-events: initial;
     z-index: 9;
+    padding: 50px 0;
   }
 
   .deals-dropdown:hover>.dropdown-content {
@@ -615,6 +616,8 @@ ul.social-icons {
   color: #fff;
   font-size: 25px;
   font-weight: 700;
+  font-family: "Neuzeit Office Soft Rounded";
+  opacity: 0.8;
 }
 
 /* Overlay Styles */
@@ -858,22 +861,27 @@ ul.social-icons {
     max-width: 500px;
     flex-grow: 1;
     margin: 0 20px;
+    position: relative;
   }
 
   .search-bar-mobile input {
     width: 100%;
     padding: 9px;
-    border-radius: 14px 0 0 14px;
+    border-radius: 14px;
     border: none;
   }
 
   .search-bar-mobile button {
-    padding: 8px;
-    background-color: #0a73c9;
+    padding: 6px 7px;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 0 14px 14px 0;
+    border-radius: 50%;
     cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+
   }
 
   .user-options {
@@ -1047,8 +1055,9 @@ form.search-form {
 
 .recently-viewed-col-wrapper {
   text-align: center;
-  width: 150px;
+  /* width: 150px; */
 }
+
 a.recently-viewed-product {
   display: flex;
   flex-direction: column;
@@ -1073,8 +1082,8 @@ a.recently-viewed-product {
 }
 
 .recently-viewed-image-wrap img {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   transition: transform 0.3s;
 }
@@ -1121,6 +1130,10 @@ a.recently-viewed-product {
   padding: 0 20px;
 }
 
+.sale-product-wrapper {
+  text-align: center;
+}
+
 .sale-product {
   text-decoration: none;
   color: inherit;
@@ -1140,8 +1153,8 @@ a.recently-viewed-product {
 }
 
 .sale-product-image img {
-  width: 100%;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   transition: transform 0.3s;
 }
@@ -1172,10 +1185,11 @@ a.recently-viewed-product {
   display: flex;
   gap: 8px;
   align-items: center;
+  justify-content: center;
 }
 
 .sale-price {
-  color: #e41e31;
+  color: var(--secondary-color);
   font-weight: 600;
 }
 

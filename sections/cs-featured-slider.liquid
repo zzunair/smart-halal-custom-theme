@@ -10,7 +10,7 @@
         <div class="products-slider slick-slider">
             {%- for product in section.settings.collection.products -%}
           <div class="slick-slide">
-            <div class="card">
+            <div class="card hover-transition">
               <div class="card-image">
                 <img 
                   src="{{ product.featured_image | img_url: 'master' }}" 

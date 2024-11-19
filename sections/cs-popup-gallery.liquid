@@ -2,9 +2,9 @@
 <section class="mb-5">
     <div class="popup-gallery">
         <div class="custom-container">
-            <div class="section-title">
+            <div class="section-title text-center">
                 <h2 class="section-heading">
-                    <span>Photo Gallery</span>
+                    <span>{{ section.settings.section_title | default: "Photo Gallery" }}</span>
                 </h2>
             </div>
             <div class="products-wrap">
@@ -41,7 +41,7 @@
                 <select id="variant-select" onchange="updateVariantDetails(this)" name="variant"></select>
 
                 <!-- Add to Cart Button -->
-                <button id="add-to-cart-btn" class="global-btn" onclick="addToCart()">Add to Cart</button>
+                <button id="add-to-cart-btn" class="global-btn" onclick="popupAddToCart()">Add to Cart</button>
 
                 <a href="" id="popup-url" class="product-url-btn">Product Details</a>
             </div>
@@ -54,7 +54,13 @@
 {% schema %}
   {
     "name": "Cs Popup Gallery",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      }
+    ],
     "blocks": [
       {
         "name": "product",

@@ -9,6 +9,7 @@
     width: 100%;
     border-radius: 8px;
     background-position: center;
+    background-size: cover;
     height: 100%;
     display: grid;
     place-items: center;
@@ -43,7 +44,7 @@
     justify-content: center;
 }
 
-#countdown>div {
+#countdown > div {
     display: grid;
     margin-left: 10px;
 }
@@ -56,9 +57,9 @@
 }
 
 .deal-btn {
-    background: rgb(47, 158, 207);
+
     border-radius: 42.5845px;
-    color: #fff;
+    color: var(--white);
     font-size: 21.2922px;
     font-weight: 700;
     padding: 20.2276px 37.2614px;

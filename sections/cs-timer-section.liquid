@@ -1,50 +1,57 @@
 <link rel="stylesheet" href="{{ 'cs-timer-section.css' | asset_url }}">
 
 <section class="deal-section mt-5 mb-5">
-    {% assign selected_year = section.settings.start_year %}
-    {% assign selected_month = section.settings.start_month %}
-    {% assign selected_day = section.settings.start_day %}
-    {% assign selected_time = section.settings.start_time %}
-    {% assign end_datetime = selected_year | append: '-' | append: selected_month | append: '-' | append: selected_day |
-    append: 'T' | append: selected_time %}
+    {% comment %} Fix date formatting to ensure proper padding of single digits {% endcomment %}
+    {% assign selected_month = section.settings.start_month | prepend: '00' | slice: -2, 2 %}
+    {% assign selected_day = section.settings.start_day | prepend: '00' | slice: -2, 2 %}
+    
+    {% assign end_datetime = section.settings.start_year | append: '-' | append: selected_month | append: '-' | append: selected_day | append: 'T' | append: section.settings.start_time | append: ':00' %}
+    
     <div class="custom-container">
-        <div class="deal-content-div"
-            style="background-image: url({{ section.settings.background_image | img_url: 'master' }});">
-        <div class="deal-timer">
-            <h2>{{ section.settings.deal_value }}% OFF</h2>
-            <p>Deal will end in</p>
-            <div id="countdown">
-                <div> <span id="days">00</span> Days </div>
-                <div style="font-size: 40px; font-weight:bolder; margin-top:-10px;">:</div>
-                <div> <span id="hours">00</span> Hours </div>
-                <div style="font-size: 40px; font-weight:bolder; margin-top:-10px;">:</div>
-                <div> <span id="minutes">00</span> Minutes </div>
-                <div style="font-size: 40px; font-weight:bolder; margin-top:-10px;">:</div>
-                <div> <span id="seconds">00</span> Seconds </div>
-            </div>
-            <a href="{{ section.settings.deal_btn_link }}" class="global-btn deal-btn">{{ section.settings.deal_btn_text }}</a>
+        <div class="deal-content-div" style="background-image: url({{ section.settings.background_image | img_url: 'master' }});">
+            <div class="deal-timer">
+                <h2>{{ section.settings.deal_value }}% OFF</h2>
+                <p>Deal will end in</p>
+                <div id="countdown">
+                    <div> <span id="days">00</span> Days </div>
+                    <div style="font-size: 40px; font-weight:bolder; margin-top:-10px;">:</div>
+                    <div> <span id="hours">00</span> Hours </div>
+                    <div style="font-size: 40px; font-weight:bolder; margin-top:-10px;">:</div>
+                    <div> <span id="minutes">00</span> Minutes </div>
+                    <div style="font-size: 40px; font-weight:bolder; margin-top:-10px;">:</div>
+                    <div> <span id="seconds">00</span> Seconds </div>
+                </div>
+                <a href="{{ section.settings.deal_btn_link }}" class="mt-4 global-btn deal-btn">{{ section.settings.deal_btn_text }}</a>
             </div>
         </div>
     </div>
 </section>
 
 <script>
+    // Format the date properly and add timezone
     const endDateTime = new Date("{{ end_datetime }}");
-
+    
     function updateCountdown() {
         const now = new Date();
         const distance = endDateTime - now;
+        
+        // Format numbers to always show two digits
+        const formatNumber = (number) => {
+            return number < 10 ? `0${number}` : number;
+        };
 
         if (distance > 0) {
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
+
+            document.getElementById("days").textContent = formatNumber(days);
+            document.getElementById("hours").textContent = formatNumber(hours);
+            document.getElementById("minutes").textContent = formatNumber(minutes);
+            document.getElementById("seconds").textContent = formatNumber(seconds);
         } else {
+            // Timer has expired
             document.getElementById("days").textContent = "00";
             document.getElementById("hours").textContent = "00";
             document.getElementById("minutes").textContent = "00";
@@ -52,16 +59,17 @@
         }
     }
 
+    // Initial update
     updateCountdown();
+    
+    // Update every second
     setInterval(updateCountdown, 1000);
-
 </script>
 
-
 {% schema %}
-    {
-      "name": "Cs timer section",
-      "settings": [
+{
+    "name": "Cs timer section",
+    "settings": [
         {
           "type": "select",
           "id": "start_year",

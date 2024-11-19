@@ -5,6 +5,7 @@
 
   /* Colors */
   --primary-color: #2f9ecf;
+  --primary-color-hover: #2a8eba;
   --secondary-color: #163340;
   --accent-color: #fbcf00;
   --success-color: #4caf50;
@@ -17,7 +18,9 @@
   --white: #ffffff;
   --background-light: #EBEFF1;
   --border-color: #e0e0e0;
-  
+  --color-g-text-alpha-30: rgba(15, 36, 45, 0.3);
+  --color-g-text-alpha-40: rgba(15, 36, 45, 0.4);
+
   /* Shadows */
   --shadow-sm: 0px 0.286rem 0.571rem rgba(0, 0, 0, 0.2);
   --shadow-md: rgba(19, 63, 82, 0.3) 0 .15em .3em, rgba(19, 63, 82, 0.15) 0 .3em .6em -.15em;
@@ -88,7 +91,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
-  margin-bottom: var(--spacing-md);
+  /* margin-bottom: var(--spacing-md); */
   line-height: 1.2;
 }
 
@@ -101,15 +104,16 @@ h6 { font-size: var(--text-lg); }
 
 p {
   font-size: var(--text-sm);
-  margin-bottom: var(--spacing-md);
+  /* margin-bottom: var(--spacing-md); */
   color: var(--text-color);
 }
+
 
 /* Global Classes */
 .custom-container {
   width: var(--container-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  /* padding: 0 var(--spacing-md); */
 }
 
 .global-btn {
@@ -125,6 +129,14 @@ p {
   transition: all 0.3s ease;
   cursor: pointer;
   text-align: center;
+}
+
+.global-btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.fs-body {
+  font-size: var(--text-sm);
 }
 
 .section-heading {
@@ -161,8 +173,13 @@ p {
 }
 
 .hover-transition:hover {
-  box-shadow: var(--shadow-lg);
+  /* box-shadow: var(--color-g-text-alpha-30) 0 3.125rem 6.25rem -1rem, var(--color-g-text-alpha-40) 0 1.875rem 2.75rem -1rem; */
+  box-shadow: var(--color-g-text-alpha-30) 0 1.125rem 1.25rem -1rem, var(--color-g-text-alpha-40) 0 1.875rem 0.75rem -1rem;
   transform: translateY(-10px);
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* Media Queries */

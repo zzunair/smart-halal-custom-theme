@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="{{ 'cs-video-section.css' | asset_url }}" >
 
-<section class="video__section__div mt-5" style="background-image: url({{ section.settings.background_image | img_url: 'master' }});">
-  <div class="video__section" data-video-url="{{ section.settings.video_url }}">
+<section class="video-section-wrapper mt-5" style="background-image: url({{ section.settings.background_image | img_url: 'master' }});">
+  <div class="video-section" data-video-url="{{ section.settings.video_url }}">
     <h4>{{ section.settings.video_section_title | default: "This week's video" }}</h4>
-    <div class="video__div" id="videoThumbnail" style="background-size: cover;">
-      <div class="video__play__btn">
+    <div class="video-thumbnail" id="videoThumbnail" style="background-size: cover; background-position: center;">
+      <div class="video-play-btn">
         <svg fill="rgba(0, 0, 0, 0.3)" style="margin-left: 6px;" height="20px" width="20px" version="1.1" id="Layer_1"
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
           enable-background="new 0 0 512 512" xml:space="preserve">
@@ -12,19 +12,20 @@
         </svg>
       </div>
     </div>
-    <div class="video__heading">
-      <span>{{ section.settings.video_title | default: "New Video" }}</span> <br>
-      <span>{{ section.settings.video_subtitle | default: "Recipes Daily" }}</span>
+    <div class="video-content-wrap">
+      <h2 class="section-heading mt-4">
+          <span>{{ section.settings.video_title | default: "New Video Recipes Daily" }}</span>
+      </h2>
+      <div class="video-description">
+        <p>{{ section.settings.video_description | default: "Why read a recipe when you can see it made right in front of
+          you?" }}</p>
+      </div>
+      <button class="video-btn global-btn mt-2">
+        See More
+      </button>
     </div>
-    <div class="video__description">
-      <p>{{ section.settings.video_description | default: "Why read a recipe when you can see it made right in front of
-        you?" }}</p>
-    </div>
-    <button class="video__btn">
-      See More
-    </button>
   </div>
-  <div class="video__section__overlay">
+  <div class="video-section-overlay">
     <div>
       {% assign video_url = section.settings.video_url | default: 'https://www.youtube.com/watch?v=_9VUPq3SxOc' %}
 

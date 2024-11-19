@@ -1,6 +1,8 @@
 .banner-wrapper .banner-slide {
     height: 700px;
-    background-size: cover;
+    background-size: 100%;
+    background-position: center center;
+
 }
 .banner-slide .custom-container{
     height: 100%;
@@ -22,6 +24,33 @@
     border-radius: 15px;
     text-align: center;
     width: 40%;
+}
+
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.no-background {
+    background-color: transparent;
+    padding: 0;
+}
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.no-background p,
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.no-background h2,
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.no-background h5 {
+    color: var(--white);
+}
+
+.banner-wrapper .banner-slide .banner-text-wrap {
+    align-items: center;
+}
+
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.text-left {
+    margin-right: auto;
+}
+
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.text-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.text-right {
+    margin-left: auto;
 }
 
 .banner-wrapper .banner-slide .banner-text-wrap h1 {
@@ -75,11 +104,13 @@
 }
 .banner-wrapper .slick-dots li.slick-active button{
     background-color: #fff;
+    border-radius: 10px;
 }
 .banner-wrapper .slick-dots li button:before {
     background-color: rgba(255, 255, 255, .36);;
     opacity: 1;
     color: #fff;
+    border-radius: 10px;
 }
 .banner-wrapper .slick-slide {
     -webkit-transform: translate3d(0, 0, 0);
@@ -91,6 +122,7 @@
     margin: 0 10px;
     width: 40px;
     background-color: #fff;
+    border-radius: 10px;
 }
 .banner-wrapper.slick-dotted.slick-slider{
     margin-bottom: 0 !important;
@@ -100,8 +132,17 @@
     .banner-wrapper .banner-slide .banner-text-wrap {
         padding: 20px 40px;
     }
-    .banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap{
+    .banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap {
         width: unset;
+    }
+    .banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.text-left,
+    .banner-wrapper .banner-slide .banner-text-wrap .banner-text-inner-wrap.text-right {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .banner-text-inner-wrap.text-left .banner-button-wrap,
+    .banner-text-inner-wrap.text-right .banner-button-wrap {
+        justify-content: center;
     }
     .cs-gallery-wrapper .custom-container{
         /* padding: 0 10px; */
